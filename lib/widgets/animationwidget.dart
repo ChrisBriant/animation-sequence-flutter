@@ -77,6 +77,12 @@ class _AnimationSequenceState extends State<AnimationSequence> with TickerProvid
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _sequenceAnimController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     if(widget.startOnLoad) {
       //print('Forward $_currentImage');
